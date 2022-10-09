@@ -1,0 +1,51 @@
+@font-face {
+    font-family: apecureFont;
+    src: url(//db.onlinewebfonts.com/c/b7a6aa84ad371cd47f36d433b5aa7e61?family=Apercu);
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+.center-screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    font-family: apecureFont;
+}
+
+.Facebook {
+    background-color: #3b5998;
+}
+
+.Twitter {
+    background-color: #00acee;
+}
+
+.signIn {
+    background-color: rgb(255, 154, 171);
+}
+.button {
+    
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: apecureFont;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.field {
+    display: flex;
+    width: 190px;
+    height: 40px;
+}
