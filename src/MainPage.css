@@ -1,0 +1,26 @@
+@font-face {
+    font-family: apecureFont;
+    src: url(//db.onlinewebfonts.com/c/b7a6aa84ad371cd47f36d433b5aa7e61?family=Apercu);
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: apecureFont;
+    font-weight: bold;
+}
+
+.searchBar input {
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.createCards {
+    border-style: solid;
+    border-radius: 4px;
+}
