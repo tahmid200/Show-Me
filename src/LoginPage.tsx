@@ -1,12 +1,12 @@
 import React, { useState, Component } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { showMeFetch } from "./fetch";
 import './LoginPage.css';
 
 import MainPage from "./MainPage";
 
 const LoginPage = () => {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,11 +22,11 @@ const LoginPage = () => {
         .then((r) => {
             if (r.status !== 200) {
                 setError(r.body.message);
-                return redirect('/login');
+                //return navigate('/login');
             }
             else{
                 console.log('success!!');
-                return redirect('/main');
+                return navigate('/main');
             }
         }).catch((e) => setError(e.message));
     }

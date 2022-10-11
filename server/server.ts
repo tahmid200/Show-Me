@@ -1,7 +1,9 @@
+const data = require("./data.ts");
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const pool = require('./db.tsx');
+const pool = require('./db.ts');
 
 
 app.use(cors({
@@ -20,6 +22,19 @@ app.post('/show_me_users', async (req,res) => {
         return res.send({message: 'Successfully logged in'});
     }
     return res.status(401).send({message: unauthorizedText});
+})
+app.post('/show_me_products', async (req,res) => {
+    const {searchText, type} = req.body;
+    
+    return res.json({data: data.filter((p) => {
+        if (searchText && !p.name.toLowerCase().includes(searchText.toLowerCase())) {
+            return false;
+        }
+        if (type && p.type !== type) {
+            return false;
+        }
+        return true;
+    })});
 })
 
 

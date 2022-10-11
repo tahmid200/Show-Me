@@ -2,12 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.tsx",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "node-pg-migrate",
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node server.ts",
+    "dev": "nodemon server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "ts": "^0.2.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
   }
 }
