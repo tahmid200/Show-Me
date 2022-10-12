@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { showMeFetch } from "./fetch";
 import './MainPage.css';
+import Grid from '@mui/material/Grid';
 
 interface Product {
     id: number;
@@ -49,17 +50,21 @@ const MainPage = () => {
                     <button className="buttonStyle" onClick={() => setType('Running')}>Running</button>
                 </div>
                 <br />
-                {error && <div>{error}</div>}
-                {products === undefined && <div>Loading...</div>}
-                {products?.map((val, key) => {
-                    return (
-                        <div className="createCards" key={key}>
-                            <img className="jacketImages" src={(val.image)} />
-                            <h3 className="jacketName">{val.name}</h3>
-                            <h3 className="jacketPrice">${(val.price).toFixed(2)}</h3>
-                        </div>
-                    );
-                })}
+                <Grid container spacing={3}>
+                    {error && <div>{error}</div>}
+                    {products === undefined && <div>Loading...</div>}
+                    {products?.map((val, key) => {
+                        return (
+                            <Grid item xs={12} sm={6} md={3}>
+                            <div className="createCards" key={key}>
+                                <img className="jacketImages" src={(val.image)} />
+                                <h3 className="jacketName">{val.name}</h3>
+                                <h3 className="jacketPrice">${(val.price).toFixed(2)}</h3>
+                            </div>
+                            </Grid>
+                        );
+                    })}
+                </Grid>
             </div>
         </div>
     );
